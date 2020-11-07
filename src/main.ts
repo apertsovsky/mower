@@ -9,8 +9,9 @@ import createLawn from "./createLawn";
 import executeCommands from "./executeCommands";
 
 import { Logger } from "tslog";
+import createLogger from "./Logging/createFileLogger";
 
-const logger = new Logger();
+const logger: Logger = createLogger();
 
 (async () =>  {
     const fileStream: fs.ReadStream = fs.createReadStream('input.txt');

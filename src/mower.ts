@@ -4,6 +4,7 @@ import { MowerReporter } from "./mowerReporter";
 import Commands from "./commands";
 
 import { Logger } from "tslog";
+import createLogger from "./Logging/createFileLogger";
 
 export class Mower {
    constructor(
@@ -12,7 +13,7 @@ export class Mower {
     private y: number,
     private readonly lawn: Lawn,
     private readonly reporter: MowerReporter,
-    private readonly logger: Logger = new Logger()  
+    private readonly logger: Logger = createLogger() 
    ) {  
     if (!lawn.xPositionFits(x) || !lawn.yPositionFits(y)) {
         this.logger.error('Initial position outside lawn');
