@@ -25,6 +25,8 @@ export function getDisplayName(direction: Direction): string {
             return 'S';
         case Direction.West:
             return 'W';
+        default:
+            throw new Error('Unsupported direction value');
     }
 }
 
