@@ -13,7 +13,8 @@
 # Exception handling input data validation
 * Exceptions are handler and logged
 * Input commands are validated
-* Since not mentioned in the task, the input file is processed till the first invalid data, so if input for on mower is invalid, next will not be processed - this can be easily changed in main.ts if needed
+* Since not mentioned in the task, the mower with invalid initilaization/command line is skipped
+* Specific validation if a commands line for a mower is missing not implemented. Can be added if needed
 
 # Input/Output
 * Input file name is hardcoded to "input.txt"
