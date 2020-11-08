@@ -20,3 +20,4 @@
 * Input file name is hardcoded to "input.txt"
 * Output file name is hardcoded to "output.txt"
 * Logs are currently stored in "logs.txt". Also, I did not implement log file rotation. As not mentioned in the task, I did not implement ant log config files. Can be easily changed.
+* As not mentioned in task, input is case sensitive
