@@ -39,12 +39,12 @@ export class Mower {
         this.logger.debug(`Command ${command} executed. Current position: x=${this.x}, y=${this.y}. Direction: ${this.direction}`);
    }
 
-   public completeMovement(): void {
-       this.logState();
+   public async completeMovement(): Promise<void> {
+       await this.logState();
    }
 
-   private logState(): void {
-       this.reporter.report(this.x + ' ' + this.y + ' ' + getDisplayName(this.direction));
+   private async logState(): Promise<void> {
+      await this.reporter.report(this.x + ' ' + this.y + ' ' + getDisplayName(this.direction));
    }
 
    private move(): void {

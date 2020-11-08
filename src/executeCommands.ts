@@ -2,7 +2,7 @@ import CommandCodes from "./commandCodes";
 import Commands from "./commands";
 import { Mower } from "./mower";
 
-export default function executeCommands(mower: Mower, commands: string): void {
+export default async function executeCommands(mower: Mower, commands: string): Promise<void> {
     for (let i = 0; i < commands.length; i++) {
         const command = commands[i]; 
         switch (command) {
@@ -20,5 +20,5 @@ export default function executeCommands(mower: Mower, commands: string): void {
                 throw new Error('Invalid command symbol')
         }      
     }
-    mower.completeMovement();
+    await mower.completeMovement();
 }

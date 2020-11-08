@@ -28,7 +28,7 @@ const logger: Logger = createLogger();
                 logger.debug('Lawn initialized');  
             } else {
                 if (mower === null) {
-                    mower = createMower(lawn, line, new FileReporter());
+                    mower = createMower(lawn, line, new FileReporter("output.txt"));
                     logger.debug('Mower initialized'); 
                 } else {
                     executeCommands(mower, line);
