@@ -4,6 +4,11 @@ import InMemoryMowerReporter from "../src/Impl/inMemoryReporter";
 import Lawn from "../src/lawn";
 
 describe('createMower', function() {
+    it ('not three args', function() {
+        let lawn: Lawn = new Lawn(4, 4);
+        expect(function() {createMower(lawn, 'x 4', new InMemoryMowerReporter())}).throw('Failed to create mower: invalid inputLine');
+    });
+
     it ('validatesXisNumber', function() {
         let lawn: Lawn = new Lawn(4, 4);
         expect(function() {createMower(lawn, 'x 4 N', new InMemoryMowerReporter())}).throw('Failed to create mower: invalid inputLine');
